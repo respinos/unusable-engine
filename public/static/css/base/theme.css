@@ -151,8 +151,12 @@
     --masto-light: oklch(89% 0.05 280.43);
     --shadow-md:
       0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --fancy-mono: "Victor Mono";
+    --fancy-mono: "Annotation Mono";
+    --fancy-mono: "PaperMono";
+    /* --fancy-mono: "Geist Mono"; */
     --font-family-sans:
-      "Annotation Mono", "Victor Mono", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      var(--fancy-mono), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-family-serif:
       valkyrie_a, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;

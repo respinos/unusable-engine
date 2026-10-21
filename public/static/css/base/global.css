@@ -10,6 +10,7 @@
     border-top: 0.5rem solid var(--brand-color-main);
     color: var(--stone-900);
     font-family: var(--font-family-sans);
+    font-feature-settings: "ss01" 1, "ss02" 1, "ss04" 1, "cv01" 1, "zero" 1;
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-dusty-olive-950); /* --slate-800 */
       color: var(--slate-200);
