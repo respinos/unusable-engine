@@ -3,6 +3,7 @@
     position: relative;
 
     --font-size: var(--step-5);
+    --font-size: 15vw;
     --letter-spacing: 0.0125ch;
 
     h1 {
