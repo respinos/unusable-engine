@@ -1,3 +1,60 @@
 @layer modules {
-  
+  header {
+    position: relative;
+
+    --font-size: var(--step-5);
+    --letter-spacing: 0.0125ch;
+
+    h1 {
+      color: rgba(45,45,45,1);
+    }
+
+    h1, .flickr {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing);
+      font-size: var(--font-size);
+      line-height: 1;
+      margin: 0;
+    }
+
+    span {
+      --offset: 4;
+      position: absolute;
+      color: #ffcc00;
+      left: calc(var(--offset) * 1ch + calc(var(--offset) * var(--letter-spacing)));
+      animation: flicker 3s linear infinite;
+      
+      /* When using a span this is needed for positioning */
+      top: 0;
+      z-index: 1;
+    }
+
+    span.l2 {
+      --offset: 10;
+      animation: flicker 6s linear infinite;      
+    }
+  }
+
+  @keyframes flicker {
+    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
+      opacity: 0.99;
+      text-shadow: 
+        -1px -1px 0 rgba(255,255,255, 0.4), 
+        1px -1px 0 rgba(255,255,255, 0.4), 
+        -1px 1px 0 rgba(255,255,255, 0.4), 
+        1px 1px 0 rgba(255,255,255, 0.4), 
+        0 -2px 8px, //default color
+        0 0 2px, //default color
+        0 0 5px #ff7e00, 
+        0 0 15px #ff4444, 
+        0 0 2px #ff7e00, 
+        0 2px 3px #000;
+    }
+    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+
 }

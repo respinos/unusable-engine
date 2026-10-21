@@ -16,6 +16,7 @@
       </xhtml:head>
       <xhtml:body>
         <xhtml:div class="container">
+          <xsl:apply-templates mode="header" />
           <xhtml:main class="main">
             <xsl:apply-templates />
           </xhtml:main>

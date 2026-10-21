@@ -18,15 +18,6 @@
 }
 
 @font-face {
-  font-display: swap;
-  font-family: "Paper Mono";
-  font-stretch: normal;
-  src:
-    url("../fonts/AnnotationMono-VF.woff2") format("woff2")
-      tech(variations);
-}
-
-@font-face {
   font-family: 'PaperMono';
   src: url('../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono[wght].woff2') format('woff2-variations'),
        url('../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono[wght].woff2') format('woff2');
@@ -34,76 +25,3 @@
   font-style: normal;
   font-display: swap;
 }
-
-/* @font-face {
-  font-display: swap;
-  font-family: "PaperMono-Bold";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-Bold.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-ExtraBold";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-ExtraBold.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-ExtraLight";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-ExtraLight.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-Light";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-Light.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-Medium";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-Medium.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-Regular";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-Regular.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-SemiBold";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-SemiBold.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-Thin";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono-Thin.woff2") format("woff2")
-      tech(variations);
-}
-@font-face {
-  font-display: swap;
-  font-family: "PaperMono-wght";
-  font-stretch: normal;
-  src:
-    url("../fonts/paper-mono-v1.000/fonts/webfonts/PaperMono[wght].woff2") format("woff2")
-      tech(variations);
-} */

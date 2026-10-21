@@ -41,8 +41,15 @@
     <xhtml:title>Useless Notes</xhtml:title>
   </xsl:template>
 
+  <xsl:template match="/m:snippets" mode="header">
+    <xhtml:header>
+      <xhtml:h1 class="flicker">Useless Notes</xhtml:h1>
+      <xhtml:span class="flickr" aria-hidden="true">e</xhtml:span>
+      <xhtml:span class="flickr l2" aria-hidden="true">t</xhtml:span>
+    </xhtml:header>
+  </xsl:template>
+
   <xsl:template match="/m:snippets">
-    <xhtml:h1>Useless Notes</xhtml:h1>
     <xhtml:p>Something something twilight years of a webfarmer.</xhtml:p>
     <xsl:for-each select="xhtml:section[position() &lt;= 3]">
       <xsl:apply-templates />

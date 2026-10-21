@@ -4,6 +4,11 @@
     width: min(1080px, 100% - 3em);
   }
 
+  .container > header {
+    margin-inline: auto;
+    width: min(70ch, 100%);
+  }
+
   .main {
     margin-inline: auto;
     width: min(70ch, 100%);
