@@ -5,6 +5,7 @@
     --font-size: var(--step-5);
     --font-size: 15vw;
     --letter-spacing: 0.0125ch;
+    --letter-spacing: -0.25ch;
 
     h1 {
       color: rgba(45,45,45,1);
