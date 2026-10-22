@@ -27,6 +27,10 @@
     <xsl:apply-templates select="m:head"/>
   </xsl:template>
 
+  <xsl:template match="/m:post" mode="header">
+    <!-- will do something -->
+  </xsl:template>
+
   <xsl:template match="/m:post">
     <xsl:apply-templates select="m:doc" />
   </xsl:template>

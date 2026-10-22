@@ -22,10 +22,6 @@
 
   <xsl:include href="_frugal.xsl"/>
 
-  <xsl:template match="/">
-    <xsl:apply-templates/>
-  </xsl:template>
-
   <xsl:template match="/m:post">
     <xhtml:section>
       <xsl:apply-templates select="m:doc" />

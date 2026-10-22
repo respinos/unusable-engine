@@ -154,6 +154,9 @@
     --fancy-mono: "Victor Mono";
     --fancy-mono: "Annotation Mono";
     --fancy-mono: "PaperMono";
+    --fancy-mono: "Iosevka Etoile";
+    --fancy-mono: "Iosevka Aile";
+    --code-mono: "Iosevka";
     /* --fancy-mono: "Geist Mono"; */
     --font-family-sans:
       var(--fancy-mono), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -161,7 +164,7 @@
     --font-family-serif:
       valkyrie_a, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-family-mono:
-      "Victor Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      var(--code-mono), "Victor Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
       "Liberation Mono", "Courier New", monospace;
     --step--2: clamp(0.6944rem, 0.6772rem + 0.0863cqi, 0.76rem);
     --step--1: clamp(0.8333rem, 0.8026rem + 0.1535cqi, 0.95rem);
