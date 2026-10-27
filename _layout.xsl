@@ -11,7 +11,7 @@
       <xhtml:head>
         <xhtml:meta charset="UTF-8" />
         <xhtml:meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <xhtml:link rel="stylesheet" href="static/css/styles.css" />
+        <xhtml:link rel="stylesheet" href="/static/css/styles.css" />
         <xsl:apply-templates mode="head" />
       </xhtml:head>
       <xhtml:body>

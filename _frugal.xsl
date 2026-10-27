@@ -25,7 +25,7 @@
       <xhtml:h2>
         <xhtml:a rel="bookmark">
           <xsl:if test="normalize-space($path) != ''">
-            <xsl:attribute name="href"><xsl:value-of select="concat('/', $path)" /></xsl:attribute>
+            <xsl:attribute name="href"><xsl:value-of select="concat('/', $path, '/')" /></xsl:attribute>
           </xsl:if>
           <xsl:value-of select="/m:post/m:head/m:title"/>
         </xhtml:a>

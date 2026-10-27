@@ -23,7 +23,7 @@
   <xsl:include href="_frugal.xsl"/>
 
   <xsl:template match="/m:post">
-    <xhtml:section>
+    <xhtml:section data-created-at="{m:head/m:created_at}">
       <xsl:apply-templates select="m:doc" />
     </xhtml:section>
   </xsl:template>

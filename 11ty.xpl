@@ -102,11 +102,11 @@
       <p:pipe step="transform"/>
     </p:variable>
 
-    <p:variable name="path" as="xs:string" select="concat($id, '.html')">
+    <p:variable name="path" as="xs:string" select="$id">
     </p:variable>
 
     <p:variable name="target" as="xs:anyURI"
-                select="resolve-uri($path, $output-dir)"/>
+                select="resolve-uri(concat($path, '/index.html'), $output-dir)"/>
 
     <p:xslt name="transform">
       <p:with-input port="source"><p:pipe step="doc"/></p:with-input>
@@ -222,6 +222,18 @@
 
   <p:store name="store-home"
            href="{resolve-uri('index.html', $output-dir)}"
+           serialization="map{'method': 'html', 'html-version': '5',
+                                'indent': true()}"/>
+
+  <p:xslt name="archives">
+    <p:with-input port="stylesheet" href="archives.xsl"/>
+    <p:with-input port="source"><p:pipe step="snippets"/></p:with-input>
+    <p:with-option name="parameters"
+                   select="map{ QName('', 'base-url'): $base-url }"/>
+  </p:xslt>
+
+  <p:store name="store-archives"
+           href="{resolve-uri('archives/index.html', $output-dir)}"
            serialization="map{'method': 'html', 'html-version': '5',
                                 'indent': true()}"/>
 
