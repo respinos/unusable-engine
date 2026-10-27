@@ -55,6 +55,10 @@
     </xhtml:p>
   </xsl:template>
 
+  <xsl:template match="m:image">
+    <xhtml:img src="{@src}" height="{@height}" width="{@width}" alt="{@alt}" />
+  </xsl:template>
+
   <xsl:template match="m:codeBlock" >
     <xhtml:pre><xhtml:code class="language-{@language}">
         <xsl:apply-templates />

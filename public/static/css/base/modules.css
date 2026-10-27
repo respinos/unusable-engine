@@ -21,7 +21,7 @@
     }
 
     span {
-      --offset: 4;
+      --offset: 2;
       position: absolute;
       color: #ffcc00;
       left: calc(var(--offset) * 1ch + calc(var(--offset) * var(--letter-spacing)));

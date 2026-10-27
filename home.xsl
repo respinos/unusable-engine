@@ -38,13 +38,13 @@
   </xsl:template> -->
 
   <xsl:template match="/m:snippets" mode="head">
-    <xhtml:title>Useless Notes</xhtml:title>
+    <xhtml:title>Unusable Notes</xhtml:title>
   </xsl:template>
 
   <xsl:template match="/m:snippets" mode="header">
     <xhtml:header>
-      <xhtml:h1 class="flicker">Useless</xhtml:h1>
-      <xhtml:span class="flickr" aria-hidden="true">e</xhtml:span>
+      <xhtml:h1 class="flicker">Unusable</xhtml:h1>
+      <xhtml:span class="flickr" aria-hidden="true">u</xhtml:span>
       <!-- <xhtml:span class="flickr l2" aria-hidden="true">t</xhtml:span> -->
     </xhtml:header>
   </xsl:template>
