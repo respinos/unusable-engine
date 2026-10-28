@@ -20,6 +20,7 @@
       <m:head>
         <xsl:apply-templates select="fn:string" mode="head" />
         <xsl:apply-templates select="fn:array[@key='tags']" />
+        <xsl:apply-templates select="fn:map[@key='metadata']" />
       </m:head>
       <xsl:apply-templates select="fn:map[fn:string[@key='type']]" />
     </m:post>
@@ -39,6 +40,16 @@
         </m:tag>
       </xsl:for-each>
     </m:tags>
+  </xsl:template>
+
+  <xsl:template match="fn:map[@key='metadata']">
+    <m:metadata>
+      <xsl:for-each select="fn:string">
+        <xsl:element name="m:{@key}">
+          <xsl:value-of select="." />
+        </xsl:element>
+      </xsl:for-each>
+    </m:metadata>
   </xsl:template>
 
   <xsl:template match="fn:map[fn:string[@key='type'][. = 'text']]" priority="101">

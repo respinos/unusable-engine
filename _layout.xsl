@@ -15,6 +15,7 @@
         <xsl:apply-templates mode="head" />
       </xhtml:head>
       <xhtml:body>
+        <xsl:call-template name="add-body-class" />
         <xhtml:div class="container">
           <xsl:apply-templates mode="header" />
           <xhtml:main class="main">
@@ -27,6 +28,8 @@
       </xhtml:body>
     </xhtml:html>
   </xsl:template>
+
+  <xsl:template name="add-body-class" />
 
 
 </xsl:stylesheet>

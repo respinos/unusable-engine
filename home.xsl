@@ -41,6 +41,10 @@
     <xhtml:title>Unusable Notes</xhtml:title>
   </xsl:template>
 
+  <xsl:template name="add-body-class">
+    <xsl:attribute name="data-page">home</xsl:attribute>
+  </xsl:template>
+
   <xsl:template match="/m:snippets" mode="header">
     <xhtml:header>
       <xhtml:h1 class="flicker">Unusable</xhtml:h1>

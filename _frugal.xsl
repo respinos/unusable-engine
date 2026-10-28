@@ -20,6 +20,31 @@
     <xhtml:meta name="dc.subject" content="{.}"/>
   </xsl:template>
 
+  <xsl:template match="m:head" mode="article-metadata">
+    <xhtml:div class="article-meta">
+      <xhtml:span>  
+        <xhtml:time datetime="{m:created_at}">
+          <xsl:value-of select="format-dateTime(xs:dateTime(replace(m:created_at, '\+0000', '')), '[Y]-[M01]-[D01]')" />
+        </xhtml:time>
+      </xhtml:span>
+      <xsl:if test="m:metadata/m:bookmarked_at">
+        <xhtml:span>
+          <xhtml:time datetime="{m:metadata/m:bookmarked_at}">
+            <!-- Bookmarked <xsl:value-of select="format-date(xs:date(replace(m:metadata/m:bookmarked_at, '\+0000', '')), '[Y]-[M01]-[D01]')" /> -->
+             <svg aria-label="Bookmarked" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark preview-icon"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
+             <xsl:value-of select="m:metadata/m:bookmarked_at" />
+          </xhtml:time>
+        </xhtml:span>
+      </xsl:if>
+      <xsl:for-each select="m:tags/m:tag">
+        <xhtml:span class="tag">
+          <xhtml:a href="/tags/{.}/"><xsl:value-of select="." /></xhtml:a>
+        </xhtml:span>
+      </xsl:for-each>
+    </xhtml:div>
+  </xsl:template>
+
+
   <xsl:template match="m:doc">
     <xhtml:header>
       <xhtml:h2>
@@ -30,6 +55,7 @@
           <xsl:value-of select="/m:post/m:head/m:title"/>
         </xhtml:a>
       </xhtml:h2>
+      <xsl:apply-templates select="/m:post/m:head" mode="article-metadata" />
     </xhtml:header>
     <xhtml:section>
       <xsl:choose>
