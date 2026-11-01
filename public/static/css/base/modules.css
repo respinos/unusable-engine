@@ -65,6 +65,18 @@
     padding: 1rem;
   }
 
+  ul[data-container="available-tags"] {
+
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    button[data-tag].active {
+      filter: invert(1);
+    }
+  }
+
   .archive-group > div {
     display: flex;
     flex-direction: row;
@@ -73,6 +85,13 @@
     time {
       color: var(--slate-500);
       white-space: nowrap;
+    }
+  }
+
+  main:has(button[data-tag].active) {
+    .archive-group {
+      h3 { display: none; }
+      div { display: none; }
     }
   }
 

@@ -56,19 +56,30 @@
   </xsl:template>
 
   <xsl:template match="/m:snippets">
-    <xhtml:h2>Search</xhtml:h2>
-    <xhtml:div class="search-wrapper">
-      <pagefind-input></pagefind-input>
-    </xhtml:div>
-    <pagefind-config preload="true"></pagefind-config>
-    <pagefind-results></pagefind-results>
+    <xsl:if test="false()">      
+      <xhtml:h2>Search</xhtml:h2>
+      <xhtml:div class="search-wrapper">
+        <pagefind-input></pagefind-input>
+      </xhtml:div>
+      <pagefind-config preload="true"></pagefind-config>
+      <pagefind-results></pagefind-results>
+    </xsl:if>
     <xhtml:h2>Archives</xhtml:h2>
+    <xhtml:details open="open">
+      <xhtml:summary>Browse by tag</xhtml:summary>
+      <xhtml:div>
+        <xhtml:ul data-container="available-tags"></xhtml:ul>
+      </xhtml:div>
+    </xhtml:details>
     <xsl:for-each-group select="xhtml:section"
       group-adjacent="format-dateTime(xs:dateTime(replace(@data-created-at, '\+0000', '')), '[Y]')">
       <xhtml:div class="archive-group">          
         <xhtml:h3><xsl:value-of select="current-grouping-key()" /></xhtml:h3>
         <xsl:for-each select="current-group()">
           <xhtml:div>
+            <xsl:attribute name="data-tags">
+              <xsl:value-of select="@data-tags" />
+            </xsl:attribute>
             <xhtml:time datetime="{@data-created-at}">
               <xsl:value-of select="format-dateTime(xs:dateTime(replace(@data-created-at, '\+0000', '')), '[Y]-[M01]')" />
             </xhtml:time>

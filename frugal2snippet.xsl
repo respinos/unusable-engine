@@ -24,6 +24,14 @@
 
   <xsl:template match="/m:post">
     <xhtml:section data-created-at="{m:head/m:created_at}">
+      <xsl:attribute name="data-tags">
+        <xsl:for-each select="m:head/m:tags/m:tag">
+          <xsl:value-of select="." />
+          <xsl:if test="position() &lt; last()">
+            <xsl:text> </xsl:text>
+          </xsl:if>
+        </xsl:for-each>
+      </xsl:attribute>
       <xsl:apply-templates select="m:doc" />
     </xhtml:section>
   </xsl:template>
