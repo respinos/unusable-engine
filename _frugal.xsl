@@ -24,7 +24,11 @@
     <xhtml:div class="article-meta">
       <xhtml:span>  
         <xhtml:time datetime="{m:created_at}">
-          <xsl:value-of select="format-dateTime(xs:dateTime(replace(m:created_at, '\+0000', '')), '[Y]-[M01]-[D01]')" />
+          <xsl:variable name="created-at" select="format-dateTime(xs:dateTime(replace(m:created_at, '\+0000', '')), '[Y]-[M01]-[D01]')" />
+          <xsl:call-template name="add-pagefind-meta">
+            <xsl:with-param name="field" select="concat('date:', $created-at)" />
+          </xsl:call-template>
+          <xsl:value-of select="$created-at" />
         </xhtml:time>
       </xhtml:span>
       <xsl:if test="m:metadata/m:bookmarked_at">
@@ -38,7 +42,12 @@
       </xsl:if>
       <xsl:for-each select="m:tags/m:tag">
         <xhtml:span class="tag">
-          <xhtml:a href="/tags/{.}/"><xsl:value-of select="." /></xhtml:a>
+          <xhtml:a href="/tags/{.}/">
+            <xsl:call-template name="add-pagefind-filter">
+              <xsl:with-param name="field" select="'tag'" />
+            </xsl:call-template>
+            <xsl:value-of select="." />
+          </xhtml:a>
         </xhtml:span>
       </xsl:for-each>
     </xhtml:div>
@@ -48,6 +57,9 @@
   <xsl:template match="m:doc">
     <xhtml:header>
       <xhtml:h2>
+        <xsl:call-template name="add-pagefind-meta">
+          <xsl:with-param name="field" select="'title'" />
+        </xsl:call-template>
         <xhtml:a rel="bookmark">
           <xsl:if test="normalize-space($path) != ''">
             <xsl:attribute name="href"><xsl:value-of select="concat('/', $path, '/')" /></xsl:attribute>
@@ -283,5 +295,13 @@
       </xsl:for-each>
     </xhtml:tr>
   </xsl:template>                
+
+  <xsl:template name="add-pagefind-meta">
+    <xsl:param name="field" />
+  </xsl:template>
+  <xsl:template name="add-pagefind-filter">
+    <xsl:param name="field" />
+  </xsl:template>
+
                
 </xsl:stylesheet>

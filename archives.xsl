@@ -39,6 +39,8 @@
 
   <xsl:template match="/m:snippets" mode="head">
     <xhtml:title>Archives - Unusable Notes</xhtml:title>
+    <xhtml:link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+    <xhtml:script src="/pagefind/pagefind-component-ui.js" type="module"></xhtml:script>
   </xsl:template>
 
   <xsl:template name="add-body-class">
@@ -56,8 +58,10 @@
   <xsl:template match="/m:snippets">
     <xhtml:h2>Search</xhtml:h2>
     <xhtml:div class="search-wrapper">
-      <xsl:comment>search goes here</xsl:comment>
+      <pagefind-input></pagefind-input>
     </xhtml:div>
+    <pagefind-config preload="true"></pagefind-config>
+    <pagefind-results></pagefind-results>
     <xhtml:h2>Archives</xhtml:h2>
     <xsl:for-each-group select="xhtml:section"
       group-adjacent="format-dateTime(xs:dateTime(replace(@data-created-at, '\+0000', '')), '[Y]')">
@@ -73,6 +77,7 @@
         </xsl:for-each>
       </xhtml:div>
     </xsl:for-each-group>
+    <xhtml:script src="/static/js/tags-support.js" type="module"></xhtml:script>
   </xsl:template>
 
   <!-- Nothing else should reach the output. -->

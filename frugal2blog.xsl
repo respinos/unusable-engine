@@ -20,8 +20,8 @@
   <xsl:param name="do-snippets" as="xs:string" select="'no'"/>
   <xsl:param name="path" as="xs:string" select="''" />
 
-  <xsl:include href="_layout.xsl"/>
-  <xsl:include href="_frugal.xsl"/>
+  <xsl:import href="_layout.xsl"/>
+  <xsl:import href="_frugal.xsl"/>
 
   <xsl:template match="/m:post" mode="head">
     <xsl:apply-templates select="m:head"/>
@@ -33,6 +33,26 @@
 
   <xsl:template match="/m:post">
     <xsl:apply-templates select="m:doc" />
+  </xsl:template>
+
+  <xsl:template name="add-pagefind-body">
+    <xsl:attribute name="data-pagefind-body">
+      <xsl:text>true</xsl:text>
+    </xsl:attribute>
+  </xsl:template>
+
+  <xsl:template name="add-pagefind-meta">
+    <xsl:param name="field" />
+    <xsl:attribute name="data-pagefind-meta">
+      <xsl:value-of select="$field" />
+    </xsl:attribute>
+  </xsl:template>
+
+  <xsl:template name="add-pagefind-filter">
+    <xsl:param name="field" />
+    <xsl:attribute name="data-pagefind-filter">
+      <xsl:value-of select="$field" />
+    </xsl:attribute>
   </xsl:template>
 
 </xsl:stylesheet>

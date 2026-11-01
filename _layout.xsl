@@ -16,6 +16,7 @@
       </xhtml:head>
       <xhtml:body>
         <xsl:call-template name="add-body-class" />
+        <xsl:call-template name="add-pagefind-body" />
         <xhtml:div class="container">
           <xsl:apply-templates mode="header" />
           <xhtml:main class="main">
@@ -30,6 +31,6 @@
   </xsl:template>
 
   <xsl:template name="add-body-class" />
-
+  <xsl:template name="add-pagefind-body" />
 
 </xsl:stylesheet>
