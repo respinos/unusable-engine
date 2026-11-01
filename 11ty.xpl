@@ -236,6 +236,18 @@
            href="{resolve-uri('archives/index.html', $output-dir)}"
            serialization="map{'method': 'html', 'html-version': '5',
                                 'indent': true()}"/>
+                                
+  <p:xslt name="search">
+    <p:with-input port="stylesheet" href="search.xsl"/>
+    <p:with-input port="source"><p:pipe step="snippets"/></p:with-input>
+    <p:with-option name="parameters"
+                   select="map{ QName('', 'base-url'): $base-url }"/>
+  </p:xslt>
+
+  <p:store name="store-search"
+           href="{resolve-uri('search/index.html', $output-dir)}"
+           serialization="map{'method': 'html', 'html-version': '5',
+                                'indent': true()}"/>
 
   <p:identity name="fin">
     <p:with-input>

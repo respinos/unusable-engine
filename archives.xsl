@@ -39,8 +39,6 @@
 
   <xsl:template match="/m:snippets" mode="head">
     <xhtml:title>Archives - Unusable Notes</xhtml:title>
-    <xhtml:link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
-    <xhtml:script src="/pagefind/pagefind-component-ui.js" type="module"></xhtml:script>
   </xsl:template>
 
   <xsl:template name="add-body-class">
@@ -56,14 +54,6 @@
   </xsl:template>
 
   <xsl:template match="/m:snippets">
-    <xsl:if test="false()">      
-      <xhtml:h2>Search</xhtml:h2>
-      <xhtml:div class="search-wrapper">
-        <pagefind-input></pagefind-input>
-      </xhtml:div>
-      <pagefind-config preload="true"></pagefind-config>
-      <pagefind-results></pagefind-results>
-    </xsl:if>
     <xhtml:h2>Archives</xhtml:h2>
     <xhtml:details open="open">
       <xhtml:summary>Browse by tag</xhtml:summary>
