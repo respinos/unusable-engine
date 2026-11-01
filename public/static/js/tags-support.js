@@ -1,8 +1,8 @@
 // do something
+
 const tagsMap = new Map();
 const headingsMap = new Map();
 document.querySelectorAll('[data-tags]').forEach((el) => {
-
   let tags = el.dataset.tags.trim().split(' ');
   if ( tags.length == 1 && tags[0] == '' ) { return; }
   tags.forEach((tag) => {
@@ -16,7 +16,6 @@ document.querySelectorAll('[data-tags]').forEach((el) => {
 const sortedTagsMap = new Map(
   [...tagsMap].sort((a, b) => a[0].localeCompare(b[0])),
 );
-// console.log(sortedTagsMap); 
 
 const $ul = document.querySelector('ul[data-container="available-tags"]');
 for (const [key, value] of sortedTagsMap) {
@@ -30,22 +29,18 @@ let $activeTagButton; let cssIndex = -1; let headingIndex;
 const styleEl = document.createElement("style");
 document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
-window.xyStyleSheet = styleSheet;
 
-$ul.addEventListener('click', (event) => {
-  let $btn = event.target.closest('button');
-  if ( ! $btn ) { return; }
-  let filterByTag;
-  if ( $activeTagButton ) {
-    $activeTagButton.classList.remove('active');
+function filterByTag($btn) {
+  if ($activeTagButton) {
+    $activeTagButton.classList.remove("active");
   }
-  if ( cssIndex > -1 ) { 
+  if (cssIndex > -1) {
     styleSheet.deleteRule(cssIndex);
     styleSheet.deleteRule(headingIndex);
     cssIndex = headingIndex = -1;
   }
   console.log("<click>", $activeTagButton, $btn);
-  if ( $activeTagButton && $activeTagButton.dataset.tag == $btn.dataset.tag ) {
+  if ($activeTagButton && $activeTagButton.dataset.tag == $btn.dataset.tag) {
     // toggling off
     $activeTagButton = null;
   } else {
@@ -56,6 +51,20 @@ $ul.addEventListener('click', (event) => {
     console.log(headingRule);
     headingIndex = styleSheet.insertRule(headingRule);
     $activeTagButton = $btn;
-    $btn.classList.add('active');
-  }
+    $btn.classList.add("active");
+  }  
+}
+
+$ul.addEventListener('click', (event) => {
+  let $btn = event.target.closest('button');
+  if ( ! $btn ) { return; }
+  filterByTag($btn);
 })
+
+if ( location.search ) {
+  let tag = location.search.substring(1);
+  let $btn = document.querySelector(`button[data-tag="${tag}"]`);
+  if ( $btn ) {
+    filterByTag($btn);
+  }
+}
