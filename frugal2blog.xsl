@@ -29,7 +29,7 @@
 
   <xsl:template match="/m:post" mode="header">
     <xhtml:header>
-      <xhtml:h1>Unusable</xhtml:h1>
+      <xhtml:h1><xhtml:a href="/">Unusable</xhtml:a></xhtml:h1>
     </xhtml:header>
   </xsl:template>
 

@@ -9,6 +9,15 @@
 
     h1 {
       color: rgba(45,45,45,1);
+
+      a {
+        text-decoration: none;
+        color: rgba(45,45,45,1);
+
+        &:hover {
+          color:#ffcc00;
+        }
+      }
     }
 
     h1, .flickr {

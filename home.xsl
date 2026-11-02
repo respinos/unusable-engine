@@ -47,7 +47,7 @@
 
   <xsl:template match="/m:snippets" mode="header">
     <xhtml:header>
-      <xhtml:h1 class="flicker">Unusable</xhtml:h1>
+      <xhtml:h1 class="flicker"><xhtml:a href="/">Unusable</xhtml:a></xhtml:h1>
       <xhtml:span class="flickr" aria-hidden="true">u</xhtml:span>
       <!-- <xhtml:span class="flickr l2" aria-hidden="true">t</xhtml:span> -->
     </xhtml:header>
