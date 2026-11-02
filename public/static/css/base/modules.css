@@ -115,4 +115,7 @@
     margin-inline-end: 0.25rem;
   }
 
+  .search-results {
+    margin: 1rem 0;
+  }
 }

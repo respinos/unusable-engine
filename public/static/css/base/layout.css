@@ -2,6 +2,9 @@
   .container {
     margin-inline: auto;
     width: min(1080px, 100% - 3em);
+    display: grid;
+    grid-template-rows: min-content minmax(0, 1fr) min-content;
+    min-height: calc(100dvh - 1rem);
   }
 
   .container > header {

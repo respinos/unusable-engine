@@ -1,4 +1,4 @@
-@layer reset, theme, global, layout, modules;
+@layer reset, pagefind, theme, global, layout, modules;
 /* @import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
@@ -7,6 +7,7 @@
 @import url("base/global.css");
 @import url("base/layout.css");
 @import url("base/modules.css");
+@import url("base/pagefind.css");
 
 @font-face {
   font-display: swap;

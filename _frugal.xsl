@@ -8,7 +8,7 @@
                 version="3.0">
 
   <xsl:template match="m:head">
-    <xhtml:title><xsl:value-of select="m:title"/></xhtml:title>
+    <xhtml:title><xsl:value-of select="m:title"/> - Unusable Notes</xhtml:title>
     <xhtml:meta charset="UTF-8"/>
     <xhtml:meta name="dc.identifier" content="{m:id}"/>
     <xhtml:meta name="dcterms.created" content="{m:created_at}"/>
@@ -32,7 +32,7 @@
         </xhtml:time>
       </xhtml:span>
       <xsl:if test="m:metadata/m:bookmarked_at">
-        <xhtml:span>
+        <xhtml:span data-pagefind-ignore="index">
           <xhtml:time datetime="{m:metadata/m:bookmarked_at}">
             <!-- Bookmarked <xsl:value-of select="format-date(xs:date(replace(m:metadata/m:bookmarked_at, '\+0000', '')), '[Y]-[M01]-[D01]')" /> -->
              <svg aria-label="Bookmarked" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark preview-icon"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
@@ -41,7 +41,7 @@
         </xhtml:span>
       </xsl:if>
       <xsl:for-each select="m:tags/m:tag">
-        <xhtml:span class="tag">
+        <xhtml:span class="tag" data-pagefind-ignore="index">
           <xhtml:a href="/tags/{.}/">
             <xsl:call-template name="add-pagefind-filter">
               <xsl:with-param name="field" select="'tag'" />

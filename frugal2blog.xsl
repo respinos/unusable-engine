@@ -28,7 +28,9 @@
   </xsl:template>
 
   <xsl:template match="/m:post" mode="header">
-    <!-- will do something -->
+    <xhtml:header>
+      <xhtml:h1>Unusable</xhtml:h1>
+    </xhtml:header>
   </xsl:template>
 
   <xsl:template match="/m:post">

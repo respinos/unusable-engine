@@ -39,13 +39,17 @@
 
   <xsl:template match="/m:snippets" mode="head">
     <xhtml:title>Search - Unusable Notes</xhtml:title>
-    <xhtml:link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+    <xhtml:link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" layer="pagefind" />
     <xhtml:script src="/pagefind/pagefind-component-ui.js" type="module"></xhtml:script>
   </xsl:template>
 
   <xsl:template name="add-body-class">
     <xsl:attribute name="data-page">home</xsl:attribute>
   </xsl:template>
+
+  <!-- <xsl:template name="add-pagefind-body">
+    <xsl:attribute name="data-pf-theme" select="'dark'" />
+  </xsl:template> -->
 
   <xsl:template match="/m:snippets" mode="header">
     <xhtml:header>
@@ -61,7 +65,9 @@
       <pagefind-input></pagefind-input>
     </xhtml:div>
     <pagefind-config preload="true"></pagefind-config>
-    <pagefind-results></pagefind-results>
+    <xhtml:div class="search-results">
+      <pagefind-results></pagefind-results>
+    </xhtml:div>
   </xsl:template>
 
   <!-- Nothing else should reach the output. -->
